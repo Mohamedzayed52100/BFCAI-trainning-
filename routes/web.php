@@ -19,7 +19,7 @@ use App\Http\Controllers\CrudController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+Route::get('/downloadex', function () {
 
     $table_attr =  DB::getSchemaBuilder()->getColumnListing('users');
     $users = \App\Models\User::all();
@@ -100,7 +100,7 @@ Route::get('/read', function () {
 
 ///pdfview
 
-Route::get('users', [UserController::class, 'index'])->name('users.index');
+Route::get('/', [UserController::class, 'index'])->name('users.index');
 //Route::get('pdfview',array('as'=>'pdfview','uses'=>'UserController@pdfview'));
 Route::any('pdfview' , [UserController::class , 'pdfview']);
 Route::any('pdfview' , [UserController::class , 'pdfview'])->name('pdfview');

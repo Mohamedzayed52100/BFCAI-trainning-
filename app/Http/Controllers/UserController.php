@@ -25,7 +25,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = User::select('*');
+            $data = Pinfo::select('*');
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
@@ -168,7 +168,7 @@ class UserController extends Controller
     }
     public function editpatient($id)
     {
-        
+
         $data =DB::select('select * from  pinfos where id =? ', [$id]);
         $data2 =DB::select('select * from  pmedicals where patientid =? ', [$id]);
         ///return dd($data);
@@ -199,8 +199,8 @@ class UserController extends Controller
             'name'=>$request->name,
             'dateofbirth'=>$request->dateofbirth,
             'bloodgroup'=>$request->bloodgroup,
-            'maritalstatus'=>$request->maritalstatus, 
-            'phone'=>$request->phone, 
+            'maritalstatus'=>$request->maritalstatus,
+            'phone'=>$request->phone,
             'address'=>$request->address,
 
         ]);
@@ -218,7 +218,7 @@ class UserController extends Controller
 
         return $request->all();
 
-        
+
         $data1 = DB::select('select * from pinfos where id = ?',  [$request->patientid]);
          $data2 = DB::select('select * from pmedicals where patientid = ?',  [$request->patientid]);
          return dd($data2);
@@ -235,7 +235,7 @@ class UserController extends Controller
         return redirect()->back()->with('status','Student Updated Successfully');
 
 
-        
+
 
     /// return $request->all();
 
@@ -247,23 +247,23 @@ class UserController extends Controller
             'name'=>$request->name,
             'dateofbirth'=>$request->dateofbirth,
             'bloodgroup'=>$request->bloodgroup,
-            'maritalstatus'=>$request->maritalstatus, 
-            'phone'=>$request->phone, 
+            'maritalstatus'=>$request->maritalstatus,
+            'phone'=>$request->phone,
             'address'=>$request->address,
-            'year'=>1, 
+            'year'=>1,
 
- 
+
         ]);
-        
+
         DB::table('pmedicals')->where('patientid' , $request->patientid)->update([
             'height'=>$request->height,
             'weight'=>$request->weight,
             'temperature'=>$request->temperature,
             'pulse'=>$request->pulse,
-            // 'maritalstatus'=>$request->maritalstatus, 
-            // 'phone'=>$request->phone, 
-            // 'address'=>$request->address, 
- 
+            // 'maritalstatus'=>$request->maritalstatus,
+            // 'phone'=>$request->phone,
+            // 'address'=>$request->address,
+
         ]);
         return redirect('join');
         return back()->with('success_update', '  data has been  updated');
@@ -296,7 +296,7 @@ class UserController extends Controller
         // $patient2->pulse=$request->pulse;
         // $patient2->save();
 
-      
+
         return $request->all();
     }
 
@@ -306,7 +306,7 @@ class UserController extends Controller
         DB::delete('delete from  pmedicals where patientid = ?', [$id]);
         return back()->with('success', '  data has been  delete');
 
-        
+
 
 
         $data =DB::select('select * from  pinfos where id =? ', [$id]);
@@ -334,32 +334,32 @@ class UserController extends Controller
         //    ->join('pinfos', 'pinfos.id', '!=', 'pmedicals.patientid')
         //    /// ->join('orders', 'users.id', '=', 'orders.user_id')
         //    ->select('pinfos.*', 'pmedicals.*')
-        //    ->get();  
+        //    ->get();
     }
 
          return view('posts', compact('data'));
     }
-  
- 
+
+
     public function destroy($id)
     {
         Pinfo::find($id)->delete();
-  
+
         return redirect()->back();
     }
-  
- 
+
+
     public function restore($id)
     {
         Pinfo::withTrashed()->find($id)->restore();
-  
+
         return redirect()->back();
-    }  
-   
+    }
+
     public function restoreAll()
     {
         Pinfo::onlyTrashed()->restore();
-  
+
         return redirect()->back();
     }
 
