@@ -116,6 +116,12 @@
                                         <span>{{ $message }}</span>
                                     @enderror
                                 </div>
+                                {{-- <div class="form-group">
+                                    <label for="title">Choose Image</label>
+                                    <input type="file"  name="file" class="form-control"  onchange="previewFile(this)">
+                                    <img id="previewImg" style="max-width: 130px;margin-top: 20px" alt="profil Image">
+                               
+                                </div> --}}
                             </form>
                         </div>
                         <div class="modal-footer">

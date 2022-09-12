@@ -32,6 +32,7 @@ class CrudController extends Controller
             'address' => 'required' ,
             'phone' => 'required' ,
             'email' => 'email|required' ,
+           /// 'file' => 'required' ,
 
 
         ]);
@@ -42,6 +43,26 @@ class CrudController extends Controller
         $student->profileimage = $imageName;
         $student->save();
         */
+        // $name=$request->name;
+        // $image=$request->file('file');
+        // $imageName=time(). '.' .$image->extension();
+        // $image->move(public_path('images'),$imageName);
+        // $p =new Pinfo();
+      //  $p->name = $request->name;
+       // $p->guardian_name = $request->guardian_name;
+        //$p->dateofbirth = $request->dateofbirth;
+    ///$p->bloodgroup = $request->bloodgroup;
+     //   $p->maritalstatus = $request->maritalstatus;
+      //  $p->address = $request->address;
+       // $p->phone = $request->phone;
+        //$p->email = $request->email;
+        // $p->patientphoto = $imageName;
+        // $p->save();
+
+
+
+
+        /* */
         $todo = Pinfo::create($data);
 
         // return redirect('getpinfo');

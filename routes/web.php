@@ -113,10 +113,26 @@ Route::get('/getpinfo', [CrudController::class, 'index']);
 Route::resource('todo', CrudController::class);
 // Route::resource('todo', UserController::class);
 
+Route::get('/join' , [UserController::class , 'join']);
+
+
+Route::any('/singlepatient/{id}' , [UserController::class , 'singlepatient']);
+Route::any('/editpatient/{id}' , [UserController::class , 'editpatient']);
+Route::any('/updatedata' , [UserController::class , 'updatedata']);
+
+Route::any('deletepatient/{id}' , [UserController::class, 'deletepatient']);
 
 
 
 
+
+
+
+
+Route::get('data', [UserController::class, 'indexed'])->name('data.index');
+Route::delete('data/{id}', [UserController::class, 'destroy'])->name('data.destroy');
+Route::get('data/restore/{id}', [UserController::class, 'restore'])->name('data.restore');
+Route::get('data/restore-all', [UserController::class, 'restoreAll'])->name('data.restoreAll');
 
 
 

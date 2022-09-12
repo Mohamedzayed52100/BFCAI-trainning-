@@ -33,6 +33,8 @@ return new class extends Migration
             $table->string('tpaid');
             $table->string('tpavalidity');
             $table->string('nin');
+            $table->softDeletes(); // this will create deleted_at field for softdelete
+
             $table->timestamps();
         });
     }

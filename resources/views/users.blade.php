@@ -22,7 +22,7 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th width="100px">Action</th>
+                {{-- <th width="100px">Action</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@
             {data: 'id', name: 'id'},
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
-            {data: 'action', name: 'action', orderable: false, searchable: false},
+            // {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
 

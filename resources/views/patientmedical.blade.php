@@ -239,32 +239,32 @@
                                     <div>
                                         <label for="title">Height</label>
                                         <br>
-                                        <input type="text" class="six" name="height" id="height">
+                                        <input type="text" class="six" name="height" value="{{old('height')}}" id="height">
                                     </div>
                                     <div>
                                         <label for="body">Weight</label>
                                         <br>
-                                        <input type="text" name="weight" id="weight" class="six">
+                                        <input type="text" name="weight"  value="{{old('weight')}}" id="weight" class="six">
                                     </div>
                                     <div>
                                         <label for="body">BP</label>
                                         <br>
-                                        <input type="text" name="bp" id="bp" class="six">
+                                        <input type="text" name="bp" value="{{old('bp')}}"  id="bp" class="six">
                                     </div>
                                     <div>
                                         <label for="body">Pulse</label>
                                         <br>
-                                        <input type="text" name="pulse" id="pulse" class="six">
+                                        <input type="text" name="pulse"  value="{{old('height')}}" id="pulse" class="six">
                                     </div>
                                     <div>
                                         <label for="body">Temperature</label>
                                         <br>
-                                        <input type="text" name="temperature" id="temperature" class="six">
+                                        <input type="text" name="temperature"  value="{{old('temperature')}}"  id="temperature" class="six">
                                     </div>
                                     <div>
                                         <label for="body">Respiration</label>
                                         <br>
-                                        <input type="text" name="respiration" id="respiration" class="six">
+                                        <input type="text" name="respiration"  value="{{old('respiration')}}" id="respiration" class="six">
                                     </div>
                                 </div>
                                 <div class="three">
@@ -283,13 +283,13 @@
                                     <div>
                                         <label for="body">Symptoms Title </label>
                                         <br>
-                                        <input type="text" name="symptomstitle" id="symptomstitle"
+                                        <input type="text" name="symptomstitle"  value="{{old('symptomstitle')}}" id="symptomstitle"
                                             class="form-control">
                                     </div>
                                     <div>
                                         <label for="body">Symptoms Description</label>
                                         <br>
-                                        <input type="text" name="symptomsdescription" id="symptomsdescription"
+                                        <input type="text" name="symptomsdescription" value="{{old('symptomsdescription')}}" id="symptomsdescription"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -314,14 +314,14 @@
                                         <label for="body">Note </label>
                                         <br>
 
-                                        <textarea name="note" class="note" row="40" columns="20"></textarea>
+                                        <textarea name="note" class="note" value="{{old('note')}}"  row="40" columns="20"></textarea>
                                     </div>
 
                                     <div style="margin-left: 40px">
                                         <label for="body">Any Known Allergies</label>
                                         <br>
 
-                                        <textarea class="anyknownallergies" name="anyknownallergies" row="40" columns="20"></textarea>
+                                        <textarea class="anyknownallergies" name="anyknownallergies" value="{{old('anyknownallergies')}}" row="40" columns="20"></textarea>
 
                                     </div>
                                 </div>
@@ -414,12 +414,11 @@
                                     <div class="form-group">
                                         <label for="body">Appointment Date </label>
                                         <br>
-                                        <input style="width:200px" type="datetime-local" name="appointmentdate"
-                                            id="appointment" class="appointmentdate">
+                                        <input style="width:200px" type="datetime-local" name="appointmentdate" value="{{old('appointmentdate')}}"  id="appointment" class="appointmentdate">
                                     </div>
                                     <div class="form-group">
                                         <label style="margin-left:60px;" for="body">Case</label>
-                                        <input style="width:200px;margin-left:60px;" type="text" name="case"
+                                        <input style="width:200px;margin-left:60px;" type="text" name="case" value="{{old('case')}}"
                                             id="case" class="form-control">
                                     </div>
                                 </div>
@@ -427,41 +426,37 @@
                                     <div class="form-group">
                                         <label for="body">Reference </label>
                                         <br>
-                                        <input style="width:200px" type="text" name="reference" id="reference"
-                                            class="form-control">
+                                        <input style="width:200px" type="text" name="reference" id="reference"  value="{{old('reference')}}" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label for="body">Tax</label>
                                         <br>
-                                        <input type="text" style="width:200px;margin-left:60px;" name="tax"
-                                            id="tax" class="tax" disabled>
+                                        <input type="text" style="width:200px;margin-left:60px;" name="tax" value="{{old('tax')}}" id="tax" class="tax" disabled>
                                     </div>
                                 </div>
                                 <div class="toto" style="display:flex;">
                                     <div class="form-group">
                                         <label for="body">Standard Charge </label>
                                         <br>
-                                        <input type="text" style="width:200px" name="standardcharge"
-                                            id="standardcharge" class="standardcharge" disabled>
+                                        <input type="text" style="width:200px" name="standardcharge" value="{{old('standardcharge')}}"  id="standardcharge" class="standardcharge" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label style="margin-left:60px;" for="body">Applied Charge </label>
                                         <br>
-                                        <input type="text" style="width:200px;margin-left:60px;"
-                                            name="appliedcharge" id="appliedcharge" class="appliedcharge">
+                                        <input type="text" style="width:200px;margin-left:60px;" name="appliedcharge" id="appliedcharge" value="{{old('appliedcharge')}}" class="appliedcharge">
                                     </div>
                                 </div>
                                 <div class="toto" style="display:flex;">
                                     <div class="form-group">
                                         <label for="body">Amount </label>
                                         <br>
-                                        <input type="text" style="width:200px" name="amount" id="amount"
+                                        <input type="text" style="width:200px" name="amount"  value="{{old('amount')}}" id="amount"
                                             class="amount">
                                     </div>
                                     <div class="form-group">
                                         <label style="margin-left:60px;" for="body">Paid Amount </label>
                                         <br>
-                                        <input type="text" style="width:200px ;margin-left:60px;"
+                                        <input type="text" style="width:200px ;margin-left:60px;" value="{{old('paidamount')}}"
                                             name="paidamount" id="paidamount" class="paidamount">
                                     </div>
                                 </div>
