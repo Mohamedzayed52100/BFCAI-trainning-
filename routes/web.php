@@ -9,16 +9,19 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Http\Controllers\CrudController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Mail\TestMail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+Route::get('/send', function () {
+    Mail::to('mohamedzayed52100@gmail.com')->send(new TestMail());
+    return back();
+
+return response('send it good');
+    return "Hello World";
+});
+
+
 Route::get('/downloadex', function () {
 
     $table_attr =  DB::getSchemaBuilder()->getColumnListing('users');
